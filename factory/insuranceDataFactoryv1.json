@@ -1,0 +1,9 @@
+{
+	"name": "insuranceDataFactoryv1",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6d4343ec-baab-4abf-aa85-4a1a50554882",
+		"tenantId": "42aecd79-0fe3-41dd-a79d-266977551bd8"
+	}
+}
