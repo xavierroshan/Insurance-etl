@@ -1,0 +1,18 @@
+{
+	"name": "cosmosdb_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_CosmosDb_insuranceetl",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "cosmosdb-insurance-etl"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {},
+		"typeProperties": {
+			"collectionName": "ClaimsAdjudicationResults"
+		}
+	}
+}

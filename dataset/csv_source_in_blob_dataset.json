@@ -1,0 +1,51 @@
+{
+	"name": "csv_source_in_blob_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureBlobStorage_insuranceetl",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "cosmosdb-insurance-etl"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "ClaimsAdjudicationResultsCosmosDB",
+				"container": "raw-data-store"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Adjudication_ID",
+				"type": "String"
+			},
+			{
+				"name": "Claim_ID",
+				"type": "String"
+			},
+			{
+				"name": "Approval_Status",
+				"type": "String"
+			},
+			{
+				"name": "Approved_Amount",
+				"type": "String"
+			},
+			{
+				"name": "Adjudicator_ID",
+				"type": "String"
+			},
+			{
+				"name": "Adjudication_Date",
+				"type": "String"
+			}
+		]
+	}
+}

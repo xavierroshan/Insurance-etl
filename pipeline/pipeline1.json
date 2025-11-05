@@ -1,0 +1,98 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy_blob_to_cosmos",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "CosmosDbSqlApiSink",
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Adjudication_ID",
+									"type": "String"
+								},
+								"sink": {
+									"path": ""
+								}
+							},
+							{
+								"source": {
+									"name": "Claim_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Approval_Status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Approved_Amount",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "Adjudicator_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Adjudication_Date",
+									"type": "Date"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "csv_source_in_blob_dataset",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmosdb_dataset",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "cosmosdb_insurance_etl"
+		},
+		"annotations": []
+	}
+}
