@@ -43,37 +43,52 @@
 									"type": "String"
 								},
 								"sink": {
-									"path": "$"
+									"path": "/Adjudication_ID"
 								}
 							},
 							{
 								"source": {
 									"name": "Claim_ID",
 									"type": "String"
+								},
+								"sink": {
+									"path": "/Claim_ID"
 								}
 							},
 							{
 								"source": {
 									"name": "Approval_Status",
 									"type": "String"
+								},
+								"sink": {
+									"path": "/Approval_Status"
 								}
 							},
 							{
 								"source": {
 									"name": "Approved_Amount",
 									"type": "Double"
+								},
+								"sink": {
+									"path": "/Approved_Amount"
 								}
 							},
 							{
 								"source": {
 									"name": "Adjudicator_ID",
 									"type": "String"
+								},
+								"sink": {
+									"path": "/Adjudicator_ID"
 								}
 							},
 							{
 								"source": {
 									"name": "Adjudication_Date",
 									"type": "Date"
+								},
+								"sink": {
+									"path": "/Adjudication_Date"
 								}
 							}
 						]
