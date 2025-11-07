@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "copy_blob_to_cosmos",
 	"properties": {
 		"activities": [
 			{
@@ -94,7 +94,7 @@
 			}
 		],
 		"folder": {
-			"name": "cosmosdb_insurance_etl"
+			"name": "insurance_etl"
 		},
 		"annotations": []
 	}

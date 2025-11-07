@@ -1,0 +1,47 @@
+{
+	"name": "Blobdatasource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureBlobStorage_insuranceetl",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "AzureSQL"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "PaymentTransactionData",
+				"container": "payment-transaction-data-azure-sql"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Payment_ID",
+				"type": "String"
+			},
+			{
+				"name": "Claim_ID",
+				"type": "String"
+			},
+			{
+				"name": "Payment_Date",
+				"type": "String"
+			},
+			{
+				"name": "Amount",
+				"type": "String"
+			},
+			{
+				"name": "Payment_Status",
+				"type": "String"
+			}
+		]
+	}
+}
