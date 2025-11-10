@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "insuranceDataFactoryv1"
 		},
+		"AzureMySql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureMySql1'"
+		},
 		"AzureSqlDatabase1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
@@ -14,6 +18,10 @@
 		"ls_AzureBlobStorage_insuranceetl_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_AzureBlobStorage_insuranceetl'"
+		},
+		"ls_AzureDataLakeStorage1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'ls_AzureDataLakeStorage1'"
 		},
 		"ls_CosmosDb_insuranceetl_connectionString": {
 			"type": "secureString",
@@ -30,6 +38,18 @@
 		"AzureSqlDatabase1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "xavierroshan"
+		},
+		"ls_AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://insuranceadlsv2.dfs.core.windows.net/"
+		},
+		"ls_AzureDataLakeStorage1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "42aecd79-0fe3-41dd-a79d-266977551bd8"
+		},
+		"ls_AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "13d413ef-96cf-42bb-b200-3a91e2964025"
 		},
 		"containerUri": {
 			"type": "string",
@@ -58,11 +78,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureMySql1_connectionString": {
+						"value": "[parameters('AzureMySql1_connectionString')]"
+					},
 					"AzureSqlDatabase1_password": {
 						"value": "[parameters('AzureSqlDatabase1_password')]"
 					},
 					"ls_AzureBlobStorage_insuranceetl_connectionString": {
 						"value": "[parameters('ls_AzureBlobStorage_insuranceetl_connectionString')]"
+					},
+					"ls_AzureDataLakeStorage1_servicePrincipalCredential": {
+						"value": "[parameters('ls_AzureDataLakeStorage1_servicePrincipalCredential')]"
 					},
 					"ls_CosmosDb_insuranceetl_connectionString": {
 						"value": "[parameters('ls_CosmosDb_insuranceetl_connectionString')]"
@@ -75,6 +101,15 @@
 					},
 					"AzureSqlDatabase1_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"ls_AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('ls_AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"ls_AzureDataLakeStorage1_properties_typeProperties_tenant": {
+						"value": "[parameters('ls_AzureDataLakeStorage1_properties_typeProperties_tenant')]"
+					},
+					"ls_AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('ls_AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId')]"
 					}
 				}
 			},
