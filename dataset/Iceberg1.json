@@ -1,0 +1,21 @@
+{
+	"name": "Iceberg1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "AzureMYSQL-to-DeltaLake"
+		},
+		"annotations": [],
+		"type": "Iceberg",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "customer-master-data"
+			}
+		},
+		"schema": []
+	}
+}
