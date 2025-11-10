@@ -13,6 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"folderPath": "customer-master-data",
 				"fileSystem": "customer-master-data"
 			}
 		},
