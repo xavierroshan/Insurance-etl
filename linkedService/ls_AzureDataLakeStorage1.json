@@ -1,0 +1,15 @@
+{
+	"name": "ls_AzureDataLakeStorage1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://insuranceadlsv2.dfs.core.windows.net/",
+			"tenant": "42aecd79-0fe3-41dd-a79d-266977551bd8",
+			"servicePrincipalId": "13d413ef-96cf-42bb-b200-3a91e2964025",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDRGOUUzMjhFLUE0NTgtNEY2MS04MTM1LTA5NDUyRDExRDU2NV8zMmI2YWM2ZS03NTcwLTQxYjQtOWIzOC03MmQyZjc0MDEzM2QiDQp9"
+		}
+	}
+}
