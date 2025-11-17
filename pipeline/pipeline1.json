@@ -3,24 +3,54 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Set variable1",
-				"type": "SetVariable",
+				"name": "IfCondition1",
+				"type": "IfCondition",
 				"dependsOn": [],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "",
-					"value": ""
+					"expression": {
+						"value": "@equals(true, true)",
+						"type": "Expression"
+					},
+					"ifTrueActivities": [
+						{
+							"name": "ForEach1",
+							"type": "ForEach",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"items": {
+									"value": "file1.csv,file2.csv,file3.csv",
+									"type": "Expression"
+								},
+								"activities": [
+									{
+										"name": "SetVariable1",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "CurrentFile",
+											"value": {
+												"value": "@item()",
+												"type": "Expression"
+											}
+										}
+									}
+								]
+							}
+						}
+					]
 				}
 			}
 		],
-		"parameters": {
-			"pipeline_variable": {
-				"type": "string",
-				"defaultValue": null
+		"variables": {
+			"CurrentFile": {
+				"type": "String"
 			}
 		},
 		"annotations": []
